@@ -11,11 +11,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        API.getAnimes()
-//        Task {
-//            try await classeApi.getAnimes(animeName: "one/piece")
-//        }
-
+        Task{
+            await API.getAnimes(animeName: "one/piece")
+        }
     }
 
 }

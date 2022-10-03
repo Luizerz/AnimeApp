@@ -12,9 +12,9 @@ struct AnimeModel: Codable {
 }
 
 struct AnimeData: Codable {
-    let mal_id: Int
-    let title: String
-    let episodes: Int
-    let score: Float
-    let synopsis: String
+    let mal_id: Int?
+    let title: String?
+    let episodes: Int?
+    let score: Float?
+    let synopsis: String?
 }

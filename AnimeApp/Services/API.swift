@@ -9,22 +9,24 @@ import Foundation
 
 class API {
 
-    static func getAnimes() {
-        let url = URL(string: "https://api.jikan.moe/v4/anime?q=naruto")!
-        let task = URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
+    static func getAnimes(animeName: String) async -> AnimeModel {
+        let url = URL(string: "https://api.jikan.moe/v4/anime?q=\(animeName))")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
 
-            guard let responseData = data else { return }
-            do{
-                let animeModel = try JSONDecoder().decode([AnimeModel].self, from: responseData)
-                print(animeModel)
-            } catch let error {
-                print(error)
-            }
+        do {
+            let (data, _) = try await URLSession.shared.data(for: urlRequest)
+            let animeDecoded = try JSONDecoder().decode(AnimeModel.self, from: data)
+//            print("response: ", response)
+//            print("decodado: ", animeDecoded) printar o decoded
+            return animeDecoded
+        } catch {
+            print(error)
         }
-        task.resume()
+
+        return AnimeModel(data: [AnimeData(mal_id: 0, title: "erro", episodes: 0, score: 0.0, synopsis: "asdaasd")])
     }
 }
 
 
-let mockHandler = AnimeModel(data: [AnimeData(mal_id: 0, title: "deu erro camarada", episodes: 23, score: 10.0, synopsis: "ja disse que deu erro, vai olhar o codigo")])
+
