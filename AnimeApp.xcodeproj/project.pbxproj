@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F248D0028EB2E1C00799147 /* AnimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F248CFF28EB2E1C00799147 /* AnimeModel.swift */; };
 		4FE23ABD28EB2A4900745C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23ABC28EB2A4900745C6C /* AppDelegate.swift */; };
 		4FE23ABF28EB2A4900745C6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23ABE28EB2A4900745C6C /* SceneDelegate.swift */; };
 		4FE23AC128EB2A4900745C6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23AC028EB2A4900745C6C /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		4FE23AD428EB2A4A00745C6C /* AnimeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23AD328EB2A4A00745C6C /* AnimeAppTests.swift */; };
 		4FE23ADE28EB2A4A00745C6C /* AnimeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23ADD28EB2A4A00745C6C /* AnimeAppUITests.swift */; };
 		4FE23AE028EB2A4A00745C6C /* AnimeAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23ADF28EB2A4A00745C6C /* AnimeAppUITestsLaunchTests.swift */; };
+		4FE23AF028EB2B1400745C6C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23AEF28EB2B1400745C6C /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F248CFF28EB2E1C00799147 /* AnimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeModel.swift; sourceTree = "<group>"; };
 		4FE23AB928EB2A4900745C6C /* AnimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE23ABC28EB2A4900745C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FE23ABE28EB2A4900745C6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		4FE23AD928EB2A4A00745C6C /* AnimeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE23ADD28EB2A4A00745C6C /* AnimeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeAppUITests.swift; sourceTree = "<group>"; };
 		4FE23ADF28EB2A4A00745C6C /* AnimeAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4FE23AEF28EB2B1400745C6C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F248CFE28EB2E0900799147 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F248CFF28EB2E1C00799147 /* AnimeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4FE23AB028EB2A4900745C6C = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +111,11 @@
 		4FE23ABB28EB2A4900745C6C /* AnimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				4F248CFE28EB2E0900799147 /* Model */,
 				4FE23ABC28EB2A4900745C6C /* AppDelegate.swift */,
 				4FE23ABE28EB2A4900745C6C /* SceneDelegate.swift */,
-				4FE23AC028EB2A4900745C6C /* ViewController.swift */,
+				4FE23AED28EB2B0200745C6C /* Services */,
+				4FE23AEC28EB2AF800745C6C /* ViewController */,
 				4FE23AC228EB2A4900745C6C /* Main.storyboard */,
 				4FE23AC528EB2A4A00745C6C /* Assets.xcassets */,
 				4FE23AC728EB2A4A00745C6C /* LaunchScreen.storyboard */,
@@ -125,6 +139,22 @@
 				4FE23ADF28EB2A4A00745C6C /* AnimeAppUITestsLaunchTests.swift */,
 			);
 			path = AnimeAppUITests;
+			sourceTree = "<group>";
+		};
+		4FE23AEC28EB2AF800745C6C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4FE23AC028EB2A4900745C6C /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4FE23AED28EB2B0200745C6C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4FE23AEF28EB2B1400745C6C /* API.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +290,8 @@
 			files = (
 				4FE23AC128EB2A4900745C6C /* ViewController.swift in Sources */,
 				4FE23ABD28EB2A4900745C6C /* AppDelegate.swift in Sources */,
+				4F248D0028EB2E1C00799147 /* AnimeModel.swift in Sources */,
+				4FE23AF028EB2B1400745C6C /* API.swift in Sources */,
 				4FE23ABF28EB2A4900745C6C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
