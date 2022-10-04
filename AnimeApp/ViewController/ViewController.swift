@@ -9,46 +9,51 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var arrayAnime: AnimeModel = AnimeModel(data: [AnimeData(mal_id: 0, title: "", episodes: 0, score: 120, synopsis: "")])
+    @IBOutlet weak var segmented: UISegmentedControl!
 
-    private let firstTableView: UITableView = {
-        let tableview = UITableView()
-        tableview.translatesAutoresizingMaskIntoConstraints = false
+    var arrayAnime: AnimeModel? = nil
+
+    private let firstTableView: AnimeListViewController = {
+        let tableview = AnimeListViewController(backgroundColor: .systemOrange)
+        tableview.view.translatesAutoresizingMaskIntoConstraints = false
         return tableview
     }()
 
-    private let secondTableView: UITableView = {
-        let tableview = UITableView()
-        tableview.translatesAutoresizingMaskIntoConstraints = false
-        tableview.backgroundColor = .systemOrange
+    private let secondTableView: AnimeListViewController = {
+        let tableview = AnimeListViewController(backgroundColor: .systemCyan)
+        tableview.view.translatesAutoresizingMaskIntoConstraints = false
         return tableview
     }()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         Task {
-            arrayAnime = await API.getAnimes(animeName: "one/piece")
+            let awaitAnimes = await API.getTopAnimes()
+            arrayAnime = awaitAnimes
         }
     }
 
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            firstTableView.backgroundColor = .systemPink
-            setTableView(tableview: firstTableView)
+            self.addChild(firstTableView)
+            view.addSubview(firstTableView.view)
+            NSLayoutConstraint.activate([
+                firstTableView.view.topAnchor.constraint(equalTo: segmented.bottomAnchor),
+                firstTableView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                firstTableView.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                firstTableView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            ])
         }
         else if sender.selectedSegmentIndex == 1 {
-            secondTableView.backgroundColor = .systemOrange
-            setTableView(tableview: secondTableView)
+            self.addChild(secondTableView)
+            view.addSubview(secondTableView.view)
+            NSLayoutConstraint.activate([
+                secondTableView.view.topAnchor.constraint(equalTo: segmented.bottomAnchor),
+                secondTableView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                secondTableView.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                secondTableView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            ])
         }
-    }
-
-    func setTableView(tableview: UITableView){
-        view.addSubview(tableview)
-        NSLayoutConstraint.activate([
-            tableview.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            tableview.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            tableview.heightAnchor.constraint(equalToConstant: 150),
-            tableview.widthAnchor.constraint(equalToConstant: 150),
-        ])
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F248D0028EB2E1C00799147 /* AnimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F248CFF28EB2E1C00799147 /* AnimeModel.swift */; };
+		4FC69B4528ECE35300625225 /* MyAnimeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC69B4428ECE35300625225 /* MyAnimeListViewController.swift */; };
+		4FC69B4728ECE39E00625225 /* AnimeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC69B4628ECE39E00625225 /* AnimeListViewController.swift */; };
 		4FE23ABD28EB2A4900745C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23ABC28EB2A4900745C6C /* AppDelegate.swift */; };
 		4FE23ABF28EB2A4900745C6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23ABE28EB2A4900745C6C /* SceneDelegate.swift */; };
 		4FE23AC128EB2A4900745C6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE23AC028EB2A4900745C6C /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		4F248CFF28EB2E1C00799147 /* AnimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeModel.swift; sourceTree = "<group>"; };
+		4FC69B4428ECE35300625225 /* MyAnimeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnimeListViewController.swift; sourceTree = "<group>"; };
+		4FC69B4628ECE39E00625225 /* AnimeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListViewController.swift; sourceTree = "<group>"; };
 		4FE23AB928EB2A4900745C6C /* AnimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE23ABC28EB2A4900745C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FE23ABE28EB2A4900745C6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				4FE23AC028EB2A4900745C6C /* ViewController.swift */,
+				4FC69B4428ECE35300625225 /* MyAnimeListViewController.swift */,
+				4FC69B4628ECE39E00625225 /* AnimeListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -289,7 +295,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE23AC128EB2A4900745C6C /* ViewController.swift in Sources */,
+				4FC69B4528ECE35300625225 /* MyAnimeListViewController.swift in Sources */,
 				4FE23ABD28EB2A4900745C6C /* AppDelegate.swift in Sources */,
+				4FC69B4728ECE39E00625225 /* AnimeListViewController.swift in Sources */,
 				4F248D0028EB2E1C00799147 /* AnimeModel.swift in Sources */,
 				4FE23AF028EB2B1400745C6C /* API.swift in Sources */,
 				4FE23ABF28EB2A4900745C6C /* SceneDelegate.swift in Sources */,
