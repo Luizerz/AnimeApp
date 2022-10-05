@@ -17,4 +17,15 @@ struct AnimeData: Codable {
     let episodes: Int?
     let score: Float?
     let synopsis: String?
+    let images: ImageFormat?
+}
+
+struct ImageFormat: Codable {
+    let jpg: ImageURL?
+}
+
+struct ImageURL: Codable {
+    let large_image_url: String?
+    let small_image_url: String?
+    let image_url: String?
 }
