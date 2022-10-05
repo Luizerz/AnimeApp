@@ -9,7 +9,7 @@ import Foundation
 
 class API {
 
-    static func getAnimes(animeName: String) async -> AnimeModel {
+    static func getAnimes(animeName: String) async -> AnimeModel? {
         let url = URL(string: "https://api.jikan.moe/v4/anime")!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
@@ -21,18 +21,11 @@ class API {
         } catch {
             print(error)
         }
-
-        return AnimeModel(data: [AnimeData(
-            mal_id: 0,
-            title: "erro",
-            episodes: 0,
-            score: 0.0,
-            synopsis: "error")]
-        )
+        return nil
     }
 
-    static func getTopAnimes() async -> AnimeModel {
-        let url = URL(string: "https://api.jikan.moe/v4/top/anime")!
+    static func getTopAnimes() async -> AnimeModel? {
+        let url = URL(string: "https://api.jikan.moe/v4/top/anime?type=tv")!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
 
@@ -43,14 +36,7 @@ class API {
         } catch {
             print(error)
         }
-
-        return AnimeModel(data: [AnimeData(
-            mal_id: 0,
-            title: "erro",
-            episodes: 0,
-            score: 0.0,
-            synopsis: "error")]
-        )
+        return nil
     }
 }
 
